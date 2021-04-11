@@ -1,4 +1,4 @@
-var objPeople = [
+var users = [
 {
     username: "user",
     password: "login"
@@ -13,10 +13,10 @@ function getInfo(){
     var username = document.getElementById("username").value
     var password = document.getElementById("password").value
     var togglePopup = document.querySelector(".popup");
-    var x = 0; // if an account is found, then set x = 1
+    var x = 0;
 
-    for(i = 0; i< objPeople.length; i++){
-        if(username == objPeople[i].username && password == objPeople[i].password){
+    for(i = 0; i< users.length; i++){
+        if(username == users[i].username && password == users[i].password){
             // check if there's any habits in system
             // existing habits > go to index.html
 
