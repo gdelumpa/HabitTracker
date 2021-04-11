@@ -13,7 +13,7 @@ function getInfo(){
     var username = document.getElementById("username").value
     var password = document.getElementById("password").value
     var togglePopup = document.querySelector(".popup");
-    var x = 0;
+    var x = 0; // if an account is found, then set x = 1
 
     for(i = 0; i< objPeople.length; i++){
         if(username == objPeople[i].username && password == objPeople[i].password){
@@ -26,6 +26,7 @@ function getInfo(){
             x = 1;
         }
     }
+    // if there is still no user found, then toggle pop up 
     if(x == 0){ 
         togglePopup.style.display = "flex";
         document.querySelector(".close").addEventListener("click", function(){
