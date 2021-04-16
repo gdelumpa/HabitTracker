@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Habit Tracker</title>
+    <link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="createhabit.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <script src="login.js"></script>
+
+</head>
+
+<body>
+    <div class="wrapper" >
+        <h1>Create a Habit</h1>
+        <div style="text-align:center">
+        
+
+
+        <form class = "form-inline" action="index.html">
+           
+              <!--Selection -->
+              <label for="type">Habit Type</label>
+            <select id="type" name="type">
+                <option value="Daily">Daily</option>
+                <option value="Custom">Custom</option>
+            </select>
+           
+            <!--title--->
+            <div class="group-title">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" placeholder="Title">
+            </div>
+
+            <!--every 2 days for 21 days-->
+            
+            <div class="custom-duration">
+                <label for="days">Every:</label>
+                <input type="number" id="days" oninput="result.value = send.value"> days <br>
+            </div>
+
+            <!--Daily duration-->
+            <div class="Date">
+                <label for="until">Duration until:</label>
+                <input type="date" name="date" max="2022-01-31">
+            </div>
+
+
+            <!--submission button-->
+            <div class="submission">
+                <input type="submit" value="Submit" onclick="saveInfo()"Submit>
+            </div>
+           
+        </form>
+        </div>
+
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <img src="close.png" alt="Close" class="close">
+                <h2>Incorrect username or password.</h2> 
+            </div>
+        </div>
+
+    </div>
+    <div id="overlay-area"></div>
+</body>
+
+</html>
