@@ -64,25 +64,26 @@ h1{
     opacity: 1;
     color: rgb(66, 64, 64);
 }
+
 .Date{
     float: left;
     margin-left: 48px;
     margin-top: 5px;
-    
 }
+
 .wrapper input[type=date]{
-    border: 1 px solid #ccc;
+    border: 1 px solid rgb(167, 159, 159);
     border-radius: 4px;
     box-sizing: border-box;
     background: rgb(245, 237, 237);
     color: rgb(66, 64, 64);
     padding-left: 0.3em;
-
+    margin-right: 0px;
 }
 
 .wrapper input[type=submit]{
-    margin-left: 40px;
-    margin-top: 90px;
+    
+    margin-top: 100px;
     border: none;
     outline: none;
     width: 70px;
@@ -98,6 +99,7 @@ h1{
 }
 
 .custom-duration{
+    display: none;
     float: left;
     margin-left: 2px;
     margin-top: 5px;
@@ -124,39 +126,6 @@ h1{
     color: #ccc;
 }
 
-.popup{
-    background: rgba(red, green, blue, alpha);
-    width: 85%;
-    height: 80%;
-    position: absolute;
-    top: 0;
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-.popup-content{
-    height: 20px;
-    width: 200px;
-    background: rgba(0,0,0,0.6);
-    padding: 20px;
-    border-radius: 5px;
-    position: relative;
-    display: flex;
-}
-
-.close{
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    background-image: url(close.png);
-    background-color: transparent;
-    background: transparent;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    cursor: pointer;
-}
 
 .wrapper a{
     font-size: 14px;
