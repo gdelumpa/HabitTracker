@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 *{
     /* Things to remove */
     margin: 0px;
@@ -5,12 +7,15 @@
     box-sizing: border-box;
 }
 
+a{
+    color: #ffffff;
+}
 nav{
     display: flex;
     justify-content: space-around; /*spread evenly / justified / centered*/
     align-items: center; /*vertically centered*/
     min-height: 8vh;
-    background-color: #ff8080;
+    background-color: hsl(0, 52%, 68%);
     font-family: 'Quicksand', sans-serif;
 
 }
@@ -89,3 +94,253 @@ nav{
 .nav-active{
     transform: translateX(0%);
 }
+
+body{
+    background-image: url(pink_abstract.jpg);
+
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    min-height: 100vh;
+    
+}
+
+.wrapper{
+    width: 1000px;   
+    height: 700px;
+    color:rgb(75, 70, 70);
+    top: 47%;
+    left: 51%;
+    padding: 60px 30px;
+    padding-bottom: 2.5rem;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    box-shadow: 8px 8px 50px rgb(80, 65, 65);
+    background: #e6dfd6;
+}
+
+h1{
+    font-size: 36px;
+    padding-left: 6%;
+}
+
+h3{
+    color:hsl(0, 32%, 57%);
+    font-size: 23px;
+    padding-left: 6%;
+}
+/*Daily habits left bar framer*/
+.type-display{
+    margin: 16px 0;
+    border-left: 5px solid #ac7670;
+    padding-left: 16px;
+}
+/*HABITS*/
+.habits-container{
+    padding-top: 30px;
+    font-size: 25px;
+    font-weight: bold;
+    padding-left: 6%;
+}
+
+.unit-habit{
+    font-size: 19px;
+    padding-left: 35px;
+    padding-top: 25px;
+}
+
+.date{
+    padding-left: 30px;
+    font-size: 18px;
+}
+
+
+/*create custom checkbox*/
+input[type="checkbox"]{
+    display: none;
+}
+
+label{
+    position: relative;
+    width: 200px;
+    display: inline-block;
+}
+
+label::before{
+    content: "";
+    background: url("checked.png");
+    background-position: center;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: -35px;
+    top: -2px;
+
+    transform: scale(0) rotateZ(180deg);
+    transition: all 0.4s cubic-bezier(0.54,0.01, 0, 1.49);
+}
+
+input[type="checkbox"]:checked + label::before{
+    transform: scale(1) rotateZ(0deg);
+}
+
+label::after{
+    content: "";
+    border: 2px solid #393d42;
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    left: -33px;
+    top:-2px;
+    border-radius: 50%;
+}
+.buttons input[type=button]{
+    margin-top: 30px;
+    border: none;
+    outline: none;
+    width: 75px;
+    height: 40px;
+    background: #4b4345;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    
+    border: 1 px solid rgb(167, 159, 159);
+    border-radius: 4px;
+}
+
+.buttons input[type=button]:hover{
+    cursor: pointer;
+}
+
+/*NOTE CSS*/
+.note{
+    position: absolute;
+    background: hsl(0, 32%, 57%);
+    width: 300px;
+    height: 50px;
+    top: 20%;
+    left: 65%;
+
+}
+
+.upcoming{
+    position: relative;
+    min-width: 300px;
+    height: 200px;
+    background: #fff;
+    color: #000;
+    font-size: 18px;
+    outline: none;
+    display: inline-block;
+
+}
+
+.text_area{
+    position: relative;
+    width: 200px;
+    display: inline-block;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+
+
+/*FOOTER CSS*/
+
+.container{
+    max-width: 2000px;
+    background-color:#24262b;
+    margin: auto;
+    /* keep footer content centered*/
+    padding-left: 20%;
+    /*provide some space on bottom of screen*/
+    padding-bottom: 5%;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul{
+    list-style: none;
+}
+.footer{
+    background-color: #24262b;
+    padding: 70px 0;
+    /*keeps footer at the bottom*/
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    height: 2.5rem;
+    
+
+}
+.footer-col{
+    width: 25%;
+    padding: 0 15px;
+
+}
+.footer-col h4{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left:0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+.footer-col ul li:not(:last-child){
+    margin-bottom: 5px;
+}
+.footer-col ul {
+    font-size:  16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul:hover {
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.description{
+    font-size: 13px;
+}
+
+.footer-col .socials a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color:rgb(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+/*once transition hover > color of background and icon is swapped*/
+.footer-col .socials a:hover{
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+
