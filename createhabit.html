@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="createhabit.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
-    <script src="login.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
 
@@ -16,18 +16,16 @@
     <div class="wrapper" >
         <h1>Create a Habit</h1>
         <div style="text-align:center">
-        
-
 
         <form class = "form-inline" action="index.html">
            
               <!--Selection -->
               <label for="type">Habit Type</label>
-            <select id="type" name="type">
+            <select id="type">
                 <option value="Daily">Daily</option>
                 <option value="Custom">Custom</option>
             </select>
-           
+            
             <!--title--->
             <div class="group-title">
                 <label for="title">Title</label>
@@ -35,7 +33,6 @@
             </div>
 
             <!--every 2 days for 21 days-->
-            
             <div class="custom-duration">
                 <label for="days">Every:</label>
                 <input type="number" id="days" oninput="result.value = send.value"> days <br>
@@ -44,23 +41,46 @@
             <!--Daily duration-->
             <div class="Date">
                 <label for="until">Duration until:</label>
-                <input type="date" name="date" max="2022-01-31">
+                <input type="date" id="date" name="date" max="2022-01-31">
             </div>
-
 
             <!--submission button-->
             <div class="submission">
-                <input type="submit" value="Submit" onclick="saveInfo()"Submit>
+                <input type="submit" value="Submit" onclick="passform();"Submit>
             </div>
-           
+            
         </form>
-        </div>
 
-        <div class="popup" id="popup">
-            <div class="popup-content">
-                <img src="close.png" alt="Close" class="close">
-                <h2>Incorrect username or password.</h2> 
-            </div>
+        <!-- if daily selected > hide .custom-duration
+            if custom selected > show .custom-duration --> 
+
+        <script>
+            $(document).ready(function(){
+            $("#type").on('change', function(){
+                $(".custom-duration").slideToggle(300);
+                });
+            });
+
+            // write function to pass values
+            // picking up id from input, and placing in local storage as new variable "setItem"
+            function passform(){
+                var habittitle = document.getElementById("title").value;
+                localStorage.setItem("textvalue",habittitle);
+
+                var habittype = document.getElementById("type").value;
+                localStorage.setItem("selectvalue",habittype);
+
+                var habitdays = document.getElementById("days").value;
+                localStorage.setItem("numvalue",habitdays);
+
+                var habitdate = document.getElementById("date").value;
+                localStorage.setItem("datevalue",habitdate);
+
+                return false;
+            }
+
+        </script>
+
         </div>
 
     </div>
